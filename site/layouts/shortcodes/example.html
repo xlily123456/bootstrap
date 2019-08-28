@@ -36,7 +36,7 @@
       {{- $image_class = trim $image_class " " -}}
     {{- end -}}
 
-    {{- range $i, $content_chunk := $modified_content -}}
+    {{- range $content_chunk := $modified_content -}}
       {{- if (strings.Contains $content_chunk `<svg class="bd-placeholder-img`) -}}
         {{- if $image_class -}}
           {{- $.Scratch.Add "highlight_content" (printf `<img src="..." class="%s" alt="...">` $image_class) -}}
